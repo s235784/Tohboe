@@ -1,0 +1,14 @@
+.footer-fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width:100%;
+}
+
+.side-nav .collapsible-body > ul:not(.collapsible) > li.active,
+.side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
+    background-color: #5e35b1 !important;
+}
+
+.pagination > li.active {
+    background-color: #5e35b1 !important;
+}

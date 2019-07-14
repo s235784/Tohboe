@@ -13,76 +13,83 @@ if (empty($_GET['ChapterInfo'])) {
 } else {
     $ChapterInfo = $_GET['ChapterInfo'];
 }
-switch ($ChapterInfo){
-    case '1':
-        $Title = '一';
-        $ForCounter = 29;
-        break;
-    case '2':
-        $Title = '二';
-        $ForCounter = 40;
-        break;
-    case '3':
-        $Title = '三';
-        $ForCounter = 34;
-        break;
-    case '4':
-        $Title = '四';
-        $ForCounter = 44;
-        break;
-    case '5':
-        $Title = '五';
-        $ForCounter = 53;
-        break;
-    case '6':
-        $Title = '六';
-        $ForCounter = 21;
-        break;
-    case '7':
-        $Title = '七';
-        $ForCounter = 21;
-        break;
-    case '8':
-        $Title = '八';
-        $ForCounter = 22;
-        break;
-    case '9':
-        $Title = '九';
-        $ForCounter = 29;
-        break;
-    case '10':
-        $Title = '十';
-        $ForCounter = 38;
-        break;
-    case '11':
-        $Title = '十一';
-        $ForCounter = 37;
-        break;
-    case '12':
-        $Title = '十二';
-        $ForCounter = 26;
-        break;
-    case '13':
-        $Title = '十三';
-        $ForCounter = 38;
-        break;
-    case '14':
-        $Title = '十四';
-        $ForCounter = 17;
-        break;
+if ($ChapterInfo != "postscript") {
+    switch ($ChapterInfo) {
+        case '1':
+            $Title = '一';
+            $ForCounter = 29;
+            break;
+        case '2':
+            $Title = '二';
+            $ForCounter = 40;
+            break;
+        case '3':
+            $Title = '三';
+            $ForCounter = 34;
+            break;
+        case '4':
+            $Title = '四';
+            $ForCounter = 44;
+            break;
+        case '5':
+            $Title = '五';
+            $ForCounter = 53;
+            break;
+        case '6':
+            $Title = '六';
+            $ForCounter = 21;
+            break;
+        case '7':
+            $Title = '七';
+            $ForCounter = 21;
+            break;
+        case '8':
+            $Title = '八';
+            $ForCounter = 22;
+            break;
+        case '9':
+            $Title = '九';
+            $ForCounter = 29;
+            break;
+        case '10':
+            $Title = '十';
+            $ForCounter = 38;
+            break;
+        case '11':
+            $Title = '十一';
+            $ForCounter = 37;
+            break;
+        case '12':
+            $Title = '十二';
+            $ForCounter = 26;
+            break;
+        case '13':
+            $Title = '十三';
+            $ForCounter = 38;
+            break;
+        case '14':
+            $Title = '十四';
+            $ForCounter = 28;
+            break;
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>远吠书签 - 第<?php echo $Title; ?>话</title>
+    <?php
+    if ($ChapterInfo == 'postscript') echo '<title>远吠书签 - 后记</title>';
+    else echo "<title>远吠书签 - 第 $Title 话</title>";
+    ?>
     <meta charset="utf-8">
     <meta name="Keywords" content="漫画,远吠书签,兽人,汉化,Furry,Comic,Cotton"/>
     <meta name="description" content=""/>
     <meta name="theme-color" content="#5E35B1">
+    <link rel="shortcut icon" href="https://cafe.furrys.cn/favicon_32.ico">
     <link href="../styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://res.furrys.cn/materialize/0.97.8/css/materialize.css"  media="screen,projection"/>
+    <link href="https://res.furrys.cn/iconicfont/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet"/>
+    <link href="https://res.furrys.cn/materialize/0.97.8/css/materialize.css" media="screen,projection" type="text/css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="https://res.furrys.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://res.furrys.cn/materialize/0.97.8/js/materialize.min.js"></script>
@@ -158,6 +165,11 @@ switch ($ChapterInfo){
                                 <li id="14-li" <?php if ($ChapterInfo == "14") echo 'class="active"' ?>>
                                     <a style="padding-left: 47px;" href="javascript:void(0);" requester="14" onclick="RequestXMLContext(this)">第十四话</a>
                                 </li>
+                                <?php if ($ChapterInfo == 'postscript') : ?>
+                                    <li id="postscript-li" class="active">
+                                        <a style="padding-left: 47px;" href="javascript:void(0);" requester="postscript" onclick="RequestXMLContext(this)">后记</a>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </li>
@@ -166,69 +178,78 @@ switch ($ChapterInfo){
         </ul>
     </div>
 </nav>
-<main id="main" style="background-color: #f5f5f5">
-    <div class="container" id="main-container">
-        <br>
-        <div class="hide-on-small-only">
-            <?php
-            for ($x = 1; $x <= $ForCounter; $x++) {
-                if ($x % 2 == 0) {
-                    $y = $x - 1;
-                    echo "<div class=\"row\" style=\"margin-bottom: 20px\">";
-                    echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
-                    echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$y}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$y}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+<main id="main" <?php if ($ChapterInfo != 'postscript') echo 'style="background-color: #f5f5f5"'; ?>>
+    <?php if ($ChapterInfo != 'postscript') : //显示漫画界面 ?>
+        <div class="container" id="main-container">
+            <br>
+            <div class="hide-on-small-only">
+                <?php
+                for ($x = 1; $x <= $ForCounter; $x++) {
+                    if ($x % 2 == 0) {
+                        $y = $x - 1;
+                        echo "<div class=\"row\" style=\"margin-bottom: 20px\">";
+                        echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                        echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$y}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$y}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                        echo "</div>";
+                    }
+                }
+                if ($ForCounter % 2 != 0) {
+                    echo "<div class=\"center\">";
+                    echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$ForCounter}.jpg\" class=\"lazy responsive-img\" alt=\"{$ChapterInfo}-{$ForCounter}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
                     echo "</div>";
                 }
-            }
-            if ($ForCounter % 2 != 0) {
-                echo "<div class=\"center\">";
-                echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$ForCounter}.jpg\" class=\"lazy responsive-img\" alt=\"{$ChapterInfo}-{$ForCounter}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
-                echo "</div>";
-            }
-            ?>
+                ?>
+            </div>
+            <div class="hide-on-med-and-up row">
+                <?php
+                for ($x = 1; $x <= $ForCounter; $x++)
+                    echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\" style='margin-bottom: 10px'/>";
+                ?>
+            </div>
         </div>
-        <div class="hide-on-med-and-up row">
-            <?php
-            for ($x = 1; $x <= $ForCounter; $x++)
-                echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\" style='margin-bottom: 10px'/>";
-            ?>
+        <?php if ($ChapterInfo == 14): ?>
+            <div class="center">
+                <a requester="postscript" onclick="RequestXMLContext(this)" class="waves-effect waves-light btn" style="background-color:#5e35b1 !important">后记</a>
+            </div>
+        <?php endif ?>
+        <div class="center">
+            <br>
+            <ul class="pagination" style="margin-bottom: 0">
+                <li class="<?php if ($ChapterInfo == 1): echo 'disabled'; endif ?>"><a href="#!" requester="<?php if ($ChapterInfo != 1): echo $ChapterInfo - 1; else: echo 1; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_left</i></a></li>
+                <?php
+                if ($ChapterInfo <= 2 ):
+                    ?>
+                    <li class="<?php if ($ChapterInfo == 1): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="1" onclick="RequestXMLContext(this)">1</a></li>
+                    <li class="<?php if ($ChapterInfo == 2): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="2" onclick="RequestXMLContext(this)">2</a></li>
+                    <li class="waves-effect"><a href="#!" requester="3" onclick="RequestXMLContext(this)">3</a></li>
+                    <li class="waves-effect"><a href="#!" requester="4" onclick="RequestXMLContext(this)">4</a></li>
+                    <li class="waves-effect"><a href="#!" requester="5" onclick="RequestXMLContext(this)">5</a></li>
+                <?php
+                elseif ($ChapterInfo <= 12 ):
+                    ?>
+                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo - 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 2 ?></a></li>
+                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo - 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 1 ?></a></li>
+                    <li class="active"><a href="#!" requester="<?php echo $ChapterInfo ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo ?></a></li>
+                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo + 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 1 ?></a></li>
+                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo + 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 2 ?></a></li>
+                <?php
+                elseif ($ChapterInfo <= 14 ):
+                    ?>
+                    <li class="waves-effect"><a href="#!" requester="10" onclick="RequestXMLContext(this)">10</a></li>
+                    <li class="waves-effect"><a href="#!" requester="11" onclick="RequestXMLContext(this)">11</a></li>
+                    <li class="waves-effect"><a href="#!" requester="12" onclick="RequestXMLContext(this)">12</a></li>
+                    <li class="<?php if ($ChapterInfo == 13): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="13" onclick="RequestXMLContext(this)">13</a></li>
+                    <li class="<?php if ($ChapterInfo == 14): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="14" onclick="RequestXMLContext(this)">14</a></li>
+                <?php
+                endif;
+                ?>
+                <li class="<?php if ($ChapterInfo == 14): echo 'disabled'; endif ?>"><a href="#!" requester="<?php if ($ChapterInfo != 14): echo $ChapterInfo + 1; else: echo 14; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+            <br>
         </div>
-    </div>
-    <div class="center">
-        <br>
-        <ul class="pagination" style="margin-bottom: 0">
-            <li class="<?php if ($ChapterInfo == 1): echo 'disabled'; endif ?>"><a href="#!" requester="<?php if ($ChapterInfo != 1): echo $ChapterInfo - 1; else: echo 1; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_left</i></a></li>
-            <?php
-            if ($ChapterInfo <= 2 ):
-                ?>
-                <li class="<?php if ($ChapterInfo == 1): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="1" onclick="RequestXMLContext(this)">1</a></li>
-                <li class="<?php if ($ChapterInfo == 2): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="2" onclick="RequestXMLContext(this)">2</a></li>
-                <li class="waves-effect"><a href="#!" requester="3" onclick="RequestXMLContext(this)">3</a></li>
-                <li class="waves-effect"><a href="#!" requester="4" onclick="RequestXMLContext(this)">4</a></li>
-                <li class="waves-effect"><a href="#!" requester="5" onclick="RequestXMLContext(this)">5</a></li>
-            <?php
-            elseif ($ChapterInfo <= 12 ):
-                ?>
-                <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo - 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 2 ?></a></li>
-                <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo - 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 1 ?></a></li>
-                <li class="active"><a href="#!" requester="<?php echo $ChapterInfo ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo ?></a></li>
-                <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo + 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 1 ?></a></li>
-                <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo + 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 2 ?></a></li>
-            <?php
-            elseif ($ChapterInfo <= 14 ):
-                ?>
-                <li class="waves-effect"><a href="#!" requester="10" onclick="RequestXMLContext(this)">10</a></li>
-                <li class="waves-effect"><a href="#!" requester="11" onclick="RequestXMLContext(this)">11</a></li>
-                <li class="waves-effect"><a href="#!" requester="12" onclick="RequestXMLContext(this)">12</a></li>
-                <li class="<?php if ($ChapterInfo == 13): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="13" onclick="RequestXMLContext(this)">13</a></li>
-                <li class="<?php if ($ChapterInfo == 14): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="14" onclick="RequestXMLContext(this)">14</a></li>
-            <?php
-            endif;
-            ?>
-            <li class="<?php if ($ChapterInfo == 14): echo 'disabled'; endif ?>"><a href="#!" requester="<?php if ($ChapterInfo != 14): echo $ChapterInfo + 1; else: echo 14; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_right</i></a></li>
-        </ul>
-        <br>
-    </div>
+    <?php else : //显示后记界面?>
+        <?php include_once('postscript.html'); ?>
+    <?php endif; ?>
 </main>
 <?php include_once('../footer.html'); ?>
 <script>

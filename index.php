@@ -30,6 +30,7 @@ switch ($ContextInfo) {
     <meta name="Keywords" content="漫画,远吠书签,兽人,汉化,Furry,Comic,Cotton"/>
     <meta name="description" content=""/>
     <meta name="theme-color" content="#5E35B1">
+    <link rel="shortcut icon" href="https://cafe.furrys.cn/favicon_32.ico">
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://res.furrys.cn/materialize/0.97.8/css/materialize.css"  media="screen,projection"/>

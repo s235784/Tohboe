@@ -77,32 +77,31 @@ if ($ChapterInfo != "postscript") {
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <?php
-    if ($ChapterInfo == 'postscript') echo '<title>远吠书签 - 后记</title>';
-    else echo "<title>远吠书签 - 第 $Title 话</title>";
+    <title><?php
+    if ($ChapterInfo == 'postscript') echo '远吠书签 - 后记';
+    else echo "远吠书签 - 第 $Title 话";
     ?>
+    </title>
     <meta charset="utf-8">
     <meta name="Keywords" content="漫画,远吠书签,兽人,汉化,Furry,Comic,Cotton"/>
     <meta name="description" content=""/>
     <meta name="theme-color" content="#5E35B1">
-    <link rel="shortcut icon" href="https://cafe.furrys.cn/favicon_32.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="https://cafe.miumstudio.cn/favicon_32.ico">
     <link href="../styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://res.furrys.cn/iconicfont/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet"/>
-    <link href="https://res.furrys.cn/materialize/0.97.8/css/materialize.css" media="screen,projection" type="text/css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script type="text/javascript" src="https://res.furrys.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://res.furrys.cn/materialize/0.97.8/js/materialize.min.js"></script>
-    <script type="text/javascript" src="https://res.furrys.cn/jquery/lazyload/1.9.5/lazyload.min.js"></script>
-    <script type="text/javascript" src="https://res.furrys.cn/holder/2.9.3/holder.min.js"></script>
-    <script type="text/javascript">
-	(function(w, d, s, a, m) {
-	a = d.createElement(s);
-	a.async = 1;
-	a.src = "//us2.centcount.com/ca.php?sid=1903120000001001&ct=" + (new Date).getTime();
-	m = d.getElementsByTagName(s)[0];
-	m.parentNode.insertBefore(a, m)
-	})(window, document, "script");
+    <link href="https://res.miumstudio.cn/iconicfont/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet"/>
+    <link href="https://res.miumstudio.cn/materialize/0.97.8/css/materialize.css" media="screen,projection" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="https://res.miumstudio.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://res.miumstudio.cn/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://res.miumstudio.cn/jquery/lazyload/1.9.5/lazyload.min.js"></script>
+    <script type="text/javascript" src="https://res.miumstudio.cn/holder/2.9.3/holder.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149898603-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-149898603-1');
     </script>
 </head>
 <body>
@@ -188,14 +187,14 @@ if ($ChapterInfo != "postscript") {
                     if ($x % 2 == 0) {
                         $y = $x - 1;
                         echo "<div class=\"row\" style=\"margin-bottom: 20px\">";
-                        echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
-                        echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$y}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$y}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                        echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                        echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$y}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$y}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
                         echo "</div>";
                     }
                 }
                 if ($ForCounter % 2 != 0) {
                     echo "<div class=\"center\">";
-                    echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$ForCounter}.jpg\" class=\"lazy responsive-img\" alt=\"{$ChapterInfo}-{$ForCounter}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                    echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$ForCounter}.jpg\" class=\"lazy responsive-img\" alt=\"{$ChapterInfo}-{$ForCounter}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
                     echo "</div>";
                 }
                 ?>
@@ -203,7 +202,7 @@ if ($ChapterInfo != "postscript") {
             <div class="hide-on-med-and-up row">
                 <?php
                 for ($x = 1; $x <= $ForCounter; $x++)
-                    echo "<img data-original=\"https://cafe.furrys.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.furrys.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\" style='margin-bottom: 10px'/>";
+                    echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\" style='margin-bottom: 10px'/>";
                 ?>
             </div>
         </div>
@@ -215,35 +214,35 @@ if ($ChapterInfo != "postscript") {
         <div class="center">
             <br>
             <ul class="pagination" style="margin-bottom: 0">
-                <li class="<?php if ($ChapterInfo == 1): echo 'disabled'; endif ?>"><a href="#!" requester="<?php if ($ChapterInfo != 1): echo $ChapterInfo - 1; else: echo 1; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_left</i></a></li>
+                <li class="<?php if ($ChapterInfo == 1): echo 'disabled'; endif ?>"><a href="javascript:void(0);" requester="<?php if ($ChapterInfo != 1): echo $ChapterInfo - 1; else: echo 1; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_left</i></a></li>
                 <?php
                 if ($ChapterInfo <= 2 ):
                     ?>
-                    <li class="<?php if ($ChapterInfo == 1): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="1" onclick="RequestXMLContext(this)">1</a></li>
-                    <li class="<?php if ($ChapterInfo == 2): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="2" onclick="RequestXMLContext(this)">2</a></li>
-                    <li class="waves-effect"><a href="#!" requester="3" onclick="RequestXMLContext(this)">3</a></li>
-                    <li class="waves-effect"><a href="#!" requester="4" onclick="RequestXMLContext(this)">4</a></li>
-                    <li class="waves-effect"><a href="#!" requester="5" onclick="RequestXMLContext(this)">5</a></li>
+                    <li class="<?php if ($ChapterInfo == 1): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="javascript:void(0);" requester="1" onclick="RequestXMLContext(this)">1</a></li>
+                    <li class="<?php if ($ChapterInfo == 2): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="javascript:void(0);" requester="2" onclick="RequestXMLContext(this)">2</a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="3" onclick="RequestXMLContext(this)">3</a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="4" onclick="RequestXMLContext(this)">4</a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="5" onclick="RequestXMLContext(this)">5</a></li>
                 <?php
                 elseif ($ChapterInfo <= 12 ):
                     ?>
-                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo - 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 2 ?></a></li>
-                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo - 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 1 ?></a></li>
-                    <li class="active"><a href="#!" requester="<?php echo $ChapterInfo ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo ?></a></li>
-                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo + 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 1 ?></a></li>
-                    <li class="waves-effect"><a href="#!" requester="<?php echo $ChapterInfo + 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 2 ?></a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="<?php echo $ChapterInfo - 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 2 ?></a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="<?php echo $ChapterInfo - 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo - 1 ?></a></li>
+                    <li class="active"><a href="javascript:void(0);" requester="<?php echo $ChapterInfo ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo ?></a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="<?php echo $ChapterInfo + 1 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 1 ?></a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="<?php echo $ChapterInfo + 2 ?>" onclick="RequestXMLContext(this)"><?php echo $ChapterInfo + 2 ?></a></li>
                 <?php
                 elseif ($ChapterInfo <= 14 ):
                     ?>
-                    <li class="waves-effect"><a href="#!" requester="10" onclick="RequestXMLContext(this)">10</a></li>
-                    <li class="waves-effect"><a href="#!" requester="11" onclick="RequestXMLContext(this)">11</a></li>
-                    <li class="waves-effect"><a href="#!" requester="12" onclick="RequestXMLContext(this)">12</a></li>
-                    <li class="<?php if ($ChapterInfo == 13): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="13" onclick="RequestXMLContext(this)">13</a></li>
-                    <li class="<?php if ($ChapterInfo == 14): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="#!" requester="14" onclick="RequestXMLContext(this)">14</a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="10" onclick="RequestXMLContext(this)">10</a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="11" onclick="RequestXMLContext(this)">11</a></li>
+                    <li class="waves-effect"><a href="javascript:void(0);" requester="12" onclick="RequestXMLContext(this)">12</a></li>
+                    <li class="<?php if ($ChapterInfo == 13): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="javascript:void(0);" requester="13" onclick="RequestXMLContext(this)">13</a></li>
+                    <li class="<?php if ($ChapterInfo == 14): echo 'active'; else: echo 'waves-effect'; endif; ?>"><a href="javascript:void(0);" requester="14" onclick="RequestXMLContext(this)">14</a></li>
                 <?php
                 endif;
                 ?>
-                <li class="<?php if ($ChapterInfo == 14): echo 'disabled'; endif ?>"><a href="#!" requester="<?php if ($ChapterInfo != 14): echo $ChapterInfo + 1; else: echo 14; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_right</i></a></li>
+                <li class="<?php if ($ChapterInfo == 14): echo 'disabled'; endif ?>"><a href="javascript:void(0);" requester="<?php if ($ChapterInfo != 14): echo $ChapterInfo + 1; else: echo 14; endif ?>" onclick="RequestXMLContext(this)"><i class="material-icons">chevron_right</i></a></li>
             </ul>
             <br>
         </div>

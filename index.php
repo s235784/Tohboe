@@ -30,21 +30,19 @@ switch ($ContextInfo) {
     <meta name="Keywords" content="漫画,远吠书签,兽人,汉化,Furry,Comic,Cotton"/>
     <meta name="description" content=""/>
     <meta name="theme-color" content="#5E35B1">
-    <link rel="shortcut icon" href="https://cafe.furrys.cn/favicon_32.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="https://cafe.miumstudio.cn/favicon_32.ico">
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://res.furrys.cn/materialize/0.97.8/css/materialize.css"  media="screen,projection"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script type="text/javascript" src="https://res.furrys.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://res.furrys.cn/materialize/0.97.8/js/materialize.min.js"></script>
-    <script type="text/javascript">
-	(function(w, d, s, a, m) {
-	a = d.createElement(s);
-	a.async = 1;
-	a.src = "//us2.centcount.com/ca.php?sid=1903120000001001&ct=" + (new Date).getTime();
-	m = d.getElementsByTagName(s)[0];
-	m.parentNode.insertBefore(a, m)
-	})(window, document, "script");
+    <link type="text/css" rel="stylesheet" href="https://res.miumstudio.cn/materialize/0.97.8/css/materialize.css"  media="screen,projection"/>
+    <script type="text/javascript" src="https://res.miumstudio.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://res.miumstudio.cn/materialize/0.97.8/js/materialize.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149898603-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-149898603-1');
     </script>
 </head>
 <body>

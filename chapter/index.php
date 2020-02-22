@@ -87,15 +87,15 @@ if ($ChapterInfo != "postscript") {
     <meta name="description" content=""/>
     <meta name="theme-color" content="#5E35B1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="https://cafe.miumstudio.cn/favicon_32.ico">
+    <link rel="shortcut icon" href="https://cafe.furcode.cn/favicon_32.ico">
     <link href="../styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://res.miumstudio.cn/iconicfont/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet"/>
-    <link href="https://res.miumstudio.cn/materialize/0.97.8/css/materialize.css" media="screen,projection" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="https://res.miumstudio.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://res.miumstudio.cn/materialize/0.97.8/js/materialize.min.js"></script>
-    <script type="text/javascript" src="https://res.miumstudio.cn/jquery/lazyload/1.9.5/lazyload.min.js"></script>
-    <script type="text/javascript" src="https://res.miumstudio.cn/holder/2.9.3/holder.min.js"></script>
+    <link href="https://res.furcode.cn/iconicfont/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet"/>
+    <link href="https://res.furcode.cn/materialize/0.97.8/css/materialize.css" media="screen,projection" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="https://res.furcode.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://res.furcode.cn/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://res.furcode.cn/jquery/lazyload/1.9.5/lazyload.min.js"></script>
+    <script type="text/javascript" src="https://res.furcode.cn/holder/2.9.3/holder.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149898603-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -187,14 +187,14 @@ if ($ChapterInfo != "postscript") {
                     if ($x % 2 == 0) {
                         $y = $x - 1;
                         echo "<div class=\"row\" style=\"margin-bottom: 20px\">";
-                        echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
-                        echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$y}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$y}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                        echo "<img data-original=\"https://cafe.furcode.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.furcode.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                        echo "<img data-original=\"https://cafe.furcode.cn/Tohboe/chapter-images/{$ChapterInfo}/{$y}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$y}\" data-src=\"https://res.furcode.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
                         echo "</div>";
                     }
                 }
                 if ($ForCounter % 2 != 0) {
                     echo "<div class=\"center\">";
-                    echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$ForCounter}.jpg\" class=\"lazy responsive-img\" alt=\"{$ChapterInfo}-{$ForCounter}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
+                    echo "<img data-original=\"https://cafe.furcode.cn/Tohboe/chapter-images/{$ChapterInfo}/{$ForCounter}.jpg\" class=\"lazy responsive-img\" alt=\"{$ChapterInfo}-{$ForCounter}\" data-src=\"https://res.furcode.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\"/>";
                     echo "</div>";
                 }
                 ?>
@@ -202,7 +202,7 @@ if ($ChapterInfo != "postscript") {
             <div class="hide-on-med-and-up row">
                 <?php
                 for ($x = 1; $x <= $ForCounter; $x++)
-                    echo "<img data-original=\"https://cafe.miumstudio.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.miumstudio.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\" style='margin-bottom: 10px'/>";
+                    echo "<img data-original=\"https://cafe.furcode.cn/Tohboe/chapter-images/{$ChapterInfo}/{$x}.jpg\" class=\"lazy responsive-img col s12 m6\" alt=\"{$ChapterInfo}-{$x}\" data-src=\"https://res.furcode.cn/holder/2.9.3/holder.min.js/500x720?text=加载中\" style='margin-bottom: 10px'/>";
                 ?>
             </div>
         </div>

@@ -22,6 +22,18 @@ switch ($ContextInfo) {
 }
 ?>
 
+<!--
+     _   _             _______  _
+    | \ | |           |__   __|(_)
+    |  \| | _   _   ___  | |    _   __ _  _ __
+    | . ` || | | | / _ \ | |   | | / _` || '_ \
+    | |\  || |_| || (_) || |   | || (_| || | | |
+    |_| \_| \__,_| \___/ |_|   |_| \__,_||_| |_|
+
+    Author: NuoTian (https://github.com/s235784)
+
+-->
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -31,12 +43,12 @@ switch ($ContextInfo) {
     <meta name="description" content=""/>
     <meta name="theme-color" content="#5E35B1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="https://cafe.miumstudio.cn/favicon_32.ico">
+    <link rel="shortcut icon" href="https://cafe.furcode.cn/favicon_32.ico">
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://res.miumstudio.cn/materialize/0.97.8/css/materialize.css"  media="screen,projection"/>
-    <script type="text/javascript" src="https://res.miumstudio.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://res.miumstudio.cn/materialize/0.97.8/js/materialize.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://res.furcode.cn/materialize/0.97.8/css/materialize.css"  media="screen,projection"/>
+    <script type="text/javascript" src="https://res.furcode.cn/jquery/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://res.furcode.cn/materialize/0.97.8/js/materialize.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149898603-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
